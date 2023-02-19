@@ -1,9 +1,5 @@
-<script setup lang="ts"></script>
-
 <template>
-  <div class="wrapper">
-    <el-button disabled>Default</el-button>
-  </div>
+  <router-view />
 </template>
 
-<style scoped></style>
+<script setup></script>
