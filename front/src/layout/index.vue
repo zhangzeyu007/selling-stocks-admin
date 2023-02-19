@@ -1,8 +1,24 @@
+<!--
+ * @Description: 
+ * @Author: 张泽雨
+ * @Date: 2023-02-19 13:27:52
+ * @LastEditors: 张泽雨
+ * @LastEditTime: 2023-02-19 19:15:45
+ * @FilePath: \front\src\layout\index.vue
+-->
 <template>
-  <div class="app-wrapper"></div>
+  <div class="app-wrapper" :style="{ '--current-color': theme }"></div>
 </template>
 
-<script setup></script>
+<script setup>
+
+
+
+
+
+
+
+</script>
 
 <style lang="scss" scoped>
 @import "@/assets/styles/mixin.scss";
