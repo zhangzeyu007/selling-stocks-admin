@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2023-02-19 19:28:07
  * @LastEditors: 张泽雨
- * @LastEditTime: 2023-02-19 19:28:32
+ * @LastEditTime: 2023-02-26 13:41:16
  * @FilePath: \front\src\layout\components\AppMain.vue
 -->
 <template>
@@ -20,13 +20,16 @@
 </template>
 
 <script setup>
+import iframeToggle from "./IframeToggle/index"
 import useTagsViewStore from '@/store/modules/tagsView'
+
 const tagsViewStore = useTagsViewStore()
+console.log(tagsViewStore.cachedViews);
+
 </script>
 
 <style lang="scss" scoped>
 .app-main {
-  /* 50= navbar  50  */
   min-height: calc(100vh - 50px);
   width: 100%;
   position: relative;
@@ -36,13 +39,10 @@ const tagsViewStore = useTagsViewStore()
 .fixed-header + .app-main {
   padding-top: 50px;
 }
-
 .hasTagsView {
   .app-main {
-    /* 84 = navbar + tags-view = 50 + 34 */
     min-height: calc(100vh - 84px);
   }
-
   .fixed-header + .app-main {
     padding-top: 84px;
   }
@@ -50,7 +50,6 @@ const tagsViewStore = useTagsViewStore()
 </style>
 
 <style lang="scss">
-// fix css style bug in open el-dialog
 .el-popup-parent--hidden {
   .fixed-header {
     padding-right: 17px;

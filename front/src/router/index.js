@@ -3,12 +3,13 @@
  * @Author: 张泽雨
  * @Date: 2023-02-19 13:37:39
  * @LastEditors: 张泽雨
- * @LastEditTime: 2023-02-19 19:11:15
+ * @LastEditTime: 2023-02-25 13:27:27
  * @FilePath: \front\src\router\index.js
  */
 
 import { createWebHistory, createRouter } from "vue-router";
 import Layout from "@/layout";
+
 // 公共路由
 export const constantRoutes = [
   {
@@ -19,6 +20,24 @@ export const constantRoutes = [
       {
         path: "/redirect/:path(.*)",
         component: () => import("@/views/redirect/index.vue"),
+      },
+    ],
+  },
+  {
+    path: "/401",
+    component: () => import("@/views/error/401"),
+    hidden: true,
+  },
+  {
+    path: "",
+    component: Layout,
+    redirect: "/index",
+    children: [
+      {
+        path: "/index",
+        component: () => import("@/views/index"),
+        name: "Index",
+        meta: { title: "首页", icon: "dashboard", affix: true },
       },
     ],
   },
