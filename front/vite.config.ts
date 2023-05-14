@@ -143,8 +143,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
 			port: 8088,
 			proxy: {
 				"/api": {
-					target: "",
-					// target: 'http://localhost:7001',
+					target: 'http://localhost:7001',
 					changeOrigin: true,
 					rewrite: (path) => path.replace(/^\/api/, ""),
 				},
